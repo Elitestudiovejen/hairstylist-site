@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maison Strandvær — Hair Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: var(--nav-height);
+    }
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 60px;
+    }
+    .hero-title {
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      margin-bottom: 28px;
+    }
+    .hero-title em { font-style: italic; color: var(--accent-dark); }
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 380px;
+      margin-bottom: 44px;
+      line-height: 1.8;
+    }
+    .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-image { position: relative; overflow: hidden; background: var(--bg-dark); }
+    .hero-image img { height: 100%; object-position: center top; }
+    .hero-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, var(--bg) 0%, transparent 20%);
+      pointer-events: none;
+    }
+
+    .marquee-section {
+      padding: 22px 0;
+      background: var(--text);
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .marquee-track {
+      display: inline-flex;
+      animation: marquee 22s linear infinite;
+    }
+    .marquee-track span {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: rgba(255,255,255,0.5);
+      padding: 0 40px;
+      letter-spacing: 0.06em;
+    }
+    .marquee-track span.dot { color: var(--accent); padding: 0; }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    .services { background: var(--bg-dark); }
+    .services-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 64px;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--border);
+    }
+    .service-card {
+      background: var(--bg);
+      padding: 48px 40px;
+      transition: background 0.25s;
+    }
+    .service-card:hover { background: var(--white); }
+    .service-icon { width: 40px; height: 1px; background: var(--accent); margin-bottom: 32px; }
+    .service-card h3 { font-size: 1.65rem; margin-bottom: 14px; }
+    .service-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 28px; }
+    .service-price { font-family: var(--font-display); font-size: 1.1rem; color: var(--accent-dark); }
+
+    .featured { display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 0; }
+    .featured-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      height: 560px;
+      gap: 2px;
+    }
+    .featured-images img { height: 100%; }
+    .featured-images img:first-child { grid-row: 1 / 3; }
+    .featured-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 70px;
+      background: var(--bg-dark);
+    }
+    .featured-text .section-heading { margin-bottom: 24px; }
+    .featured-text p { color: var(--text-muted); line-height: 1.9; margin-bottom: 36px; max-width: 380px; }
+
+    .testimonial { background: var(--text); text-align: center; padding: 100px 60px; }
+    .testimonial blockquote {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2.6rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--white);
+      max-width: 820px;
+      margin: 0 auto 28px;
+      line-height: 1.4;
+    }
+    .testimonial cite {
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-style: normal;
+    }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-content { padding: 60px 24px; }
+      .hero-image { height: 50vw; min-height: 280px; }
+      .services-header { flex-direction: column; align-items: flex-start; gap: 24px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .featured { grid-template-columns: 1fr; }
+      .featured-images { height: 300px; }
+      .featured-text { padding: 60px 24px; }
+      .testimonial { padding: 72px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">Maison Strandvær</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://booking.example.com" target="_blank" class="btn-book">Book Now</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <span class="section-label">Oslo · Est. 2018</span>
+      <h1 class="hero-title">Where hair<br>becomes <em>art.</em></h1>
+      <p class="hero-subtitle">A boutique hair studio dedicated to precision cuts, lived-in colour, and the kind of finish that turns heads — quietly.</p>
+      <div class="hero-cta">
+        <a href="https://booking.example.com" target="_blank" class="btn btn-primary">Book an Appointment</a>
+        <a href="gallery.html" class="btn btn-outline">View Our Work</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=900&auto=format&fit=crop&q=80" alt="Hairstylist at work" />
+      <div class="hero-image-overlay"></div>
+    </div>
+  </section>
+
+  <div class="marquee-section" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Precision Cuts</span><span class="dot">·</span>
+      <span>Lived-In Colour</span><span class="dot">·</span>
+      <span>Balayage</span><span class="dot">·</span>
+      <span>Bridal Styling</span><span class="dot">·</span>
+      <span>Keratin Treatments</span><span class="dot">·</span>
+      <span>Colour Correction</span><span class="dot">·</span>
+      <span>Scalp Care</span><span class="dot">·</span>
+      <span>Extensions</span><span class="dot">·</span>
+      <span>Precision Cuts</span><span class="dot">·</span>
+      <span>Lived-In Colour</span><span class="dot">·</span>
+      <span>Balayage</span><span class="dot">·</span>
+      <span>Bridal Styling</span><span class="dot">·</span>
+      <span>Keratin Treatments</span><span class="dot">·</span>
+      <span>Colour Correction</span><span class="dot">·</span>
+      <span>Scalp Care</span><span class="dot">·</span>
+      <span>Extensions</span><span class="dot">·</span>
+    </div>
+  </div>
+
+  <section class="services">
+    <div class="services-header">
+      <div>
+        <span class="section-label">What We Offer</span>
+        <h2 class="section-heading">Services crafted<br>for every look.</h2>
+      </div>
+      <a href="https://booking.example.com" target="_blank" class="btn btn-primary">See All Services</a>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"></div>
+        <h3>Cuts & Styling</h3>
+        <p>From structured bobs to effortless layers — every cut is tailored to your face shape, lifestyle, and texture.</p>
+        <span class="service-price">From 650 kr</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"></div>
+        <h3>Colour & Balayage</h3>
+        <p>Dimensional colour, sun-kissed balayage, and full transformations done with precision and intention.</p>
+        <span class="service-price">From 1 200 kr</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"></div>
+        <h3>Treatments</h3>
+        <p>Restorative keratin, deep conditioning, and scalp treatments to bring health and shine back to your hair.</p>
+        <span class="service-price">From 490 kr</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="featured">
+    <div class="featured-images">
+      <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&auto=format&fit=crop&q=80" alt="Featured work 1" />
+      <img src="https://images.unsplash.com/photo-1519735777090-ec97162dc266?w=400&auto=format&fit=crop&q=80" alt="Featured work 2" />
+      <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=400&auto=format&fit=crop&q=80" alt="Featured work 3" />
+    </div>
+    <div class="featured-text">
+      <span class="section-label">Our Work</span>
+      <h2 class="section-heading">Every strand tells a story.</h2>
+      <p>We believe great hair isn't about trends — it's about finding what makes you feel most yourself. Browse our gallery to see the full range of what's possible.</p>
+      <a href="gallery.html" class="btn btn-outline">Explore Gallery</a>
+    </div>
+  </div>
+
+  <div class="testimonial">
+    <blockquote>"I've never felt more confident walking out of a salon. The team at Maison Strandvær genuinely listens — and the results speak for themselves."</blockquote>
+    <cite>— Ingrid M., loyal client since 2020</cite>
+  </div>
+
+  <footer>
+    <div>
+      <div class="footer-brand">Maison Strandvær</div>
+      <div class="footer-tagline">Hair studio · Oslo, Norway</div>
+    </div>
+    <div>
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Studio</h4>
+      <ul>
+        <li><a href="#">Strandveien 14, Oslo</a></li>
+        <li><a href="tel:+4712345678">+47 123 45 678</a></li>
+        <li><a href="mailto:hello@maisonstrandvaer.no">hello@maisonstrandvaer.no</a></li>
+        <li style="margin-top:16px"><a href="https://booking.example.com" target="_blank" style="color:var(--accent)">Book Online →</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">© 2026 Maison Strandvær. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
