@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Priser — Elite Studio ApS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .page-header {
+      padding-top: calc(var(--nav-height) + 80px);
+      padding-bottom: 64px;
+      padding-left: 60px;
+      padding-right: 60px;
+      background: var(--bg-dark);
+      border-bottom: 1px solid var(--border);
+    }
+    .page-header h1 { font-size: clamp(3rem, 6vw, 5rem); font-weight: 300; }
+    .page-header p { color: var(--text-muted); margin-top: 16px; font-size: 0.95rem; max-width: 440px; line-height: 1.8; }
+
+    .tab-bar { padding: 40px 60px 0; display: flex; gap: 8px; }
+    .tab-btn {
+      padding: 8px 28px;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-muted);
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: var(--font-body);
+    }
+    .tab-btn:hover { border-color: var(--text); color: var(--text); }
+    .tab-btn.active { background: var(--text); color: var(--white); border-color: var(--text); }
+
+    .price-wrap { padding: 48px 60px 100px; }
+    .price-panel { display: none; }
+    .price-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 0 60px; }
+
+    .price-category { margin-bottom: 48px; }
+    .price-category-heading {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-dark);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      padding: 11px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+    .price-row:last-child { border-bottom: none; }
+    .price-name { color: var(--text); line-height: 1.5; }
+    .price-amount {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--text);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .price-cta {
+      background: var(--bg-dark);
+      border-top: 1px solid var(--border);
+      padding: 80px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .price-cta h2 { font-size: clamp(1.8rem, 3vw, 2.8rem); max-width: 460px; }
+    .price-cta p { color: var(--text-muted); margin-top: 10px; font-size: 0.95rem; }
+
+    @media (max-width: 900px) {
+      .page-header { padding: calc(var(--nav-height) + 48px) 24px 48px; }
+      .tab-bar { padding: 32px 24px 0; }
+      .price-wrap { padding: 40px 24px 72px; }
+      .price-panel.active { grid-template-columns: 1fr; gap: 0; }
+      .price-cta { flex-direction: column; align-items: flex-start; padding: 60px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">Elite Studio ApS</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Forside</a></li>
+      <li><a href="gallery.html">Galleri</a></li>
+      <li><a href="about.html">Om os</a></li>
+      <li><a href="pris.html" class="active">Priser</a></li>
+      <li><a href="https://salonbook.one/?elite.studio#/" target="_blank" class="btn-book">Book nu</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <span class="section-label">Vores prisliste</span>
+    <h1>Priser</h1>
+    <p>Alle priser er vejledende. Endelig pris aftales ved konsultation. Alle behandlinger kan bookes online.</p>
+  </div>
+
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab('dame', this)">Dame</button>
+    <button class="tab-btn" onclick="switchTab('herre', this)">Herre</button>
+  </div>
+
+  <div class="price-wrap">
+
+    <!-- DAME -->
+    <div class="price-panel active" id="panel-dame">
+
+      <div>
+        <div class="price-category">
+          <div class="price-category-heading">Klip</div>
+          <div class="price-row"><span class="price-name">Dameklip, vask og føn</span><span class="price-amount">535 kr.</span></div>
+          <div class="price-row"><span class="price-name">Dameklip uden vask & føn</span><span class="price-amount">455 kr.</span></div>
+          <div class="price-row"><span class="price-name">Dameklip lux behandling</span><span class="price-amount">625 kr.</span></div>
+          <div class="price-row"><span class="price-name">Curl cut – kort hår / kort page</span><span class="price-amount">815 kr.</span></div>
+          <div class="price-row"><span class="price-name">Curl cut – mellem langt / skulderlængde</span><span class="price-amount">925 kr.</span></div>
+          <div class="price-row"><span class="price-name">Curl cut – langt / tykt hår</span><span class="price-amount">1.020 kr.</span></div>
+          <div class="price-row"><span class="price-name">Pandehår</span><span class="price-amount">100 kr.</span></div>
+          <div class="price-row"><span class="price-name">Børneklip 0–3 år</span><span class="price-amount">285 kr.</span></div>
+          <div class="price-row"><span class="price-name">Børneklip 4–12 år</span><span class="price-amount">325 kr.</span></div>
+        </div>
+
+        <div class="price-category">
+          <div class="price-category-heading">Farve & Reflekser – med klip</div>
+          <div class="price-row"><span class="price-name">Helfarve kort hår</span><span class="price-amount">Fra 1.420 kr.</span></div>
+          <div class="price-row"><span class="price-name">Helfarve mellempage</span><span class="price-amount">Fra 1.445 kr.</span></div>
+          <div class="price-row"><span class="price-name">Helfarve langt hår</span><span class="price-amount">Fra 1.540 kr.</span></div>
+          <div class="price-row"><span class="price-name">Reflekser kort hår</span><span class="price-amount">Fra 1.425 kr.</span></div>
+          <div class="price-row"><span class="price-name">Reflekser mellempage</span><span class="price-amount">Fra 1.585 kr.</span></div>
+          <div class="price-row"><span class="price-name">Reflekser langt hår</span><span class="price-amount">Fra 1.685 kr.</span></div>
+          <div class="price-row"><span class="price-name">Special farve</span><span class="price-amount">Fra 3.000 kr.</span></div>
+        </div>
+
+        <div class="price-category">
+          <div class="price-category-heading">Farve & Reflekser – uden klip</div>
+          <div class="price-row"><span class="price-name">Bundfarve / helfarve kort hår</span><span class="price-amount">Fra 895 kr.</span></div>
+          <div class="price-row"><span class="price-name">Helfarve mellem længde</span><span class="price-amount">Fra 985 kr.</span></div>
+          <div class="price-row"><span class="price-name">Helfarve langt hår</span><span class="price-amount">Fra 1.080 kr.</span></div>
+          <div class="price-row"><span class="price-name">Reflekser kort hår</span><span class="price-amount">Fra 895 kr.</span></div>
+          <div class="price-row"><span class="price-name">Reflekser mellemhår</span><span class="price-amount">Fra 1.125 kr.</span></div>
+          <div class="price-row"><span class="price-name">Reflekser langt hår</span><span class="price-amount">1.225 kr.</span></div>
+          <div class="price-row"><span class="price-name">Touch up – sider & top</span><span class="price-amount">Fra 910 kr.</span></div>
+          <div class="price-row"><span class="price-name">Special farve</span><span class="price-amount">Fra 2.560 kr.</span></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="price-category">
+          <div class="price-category-heading">Permanent – med klip</div>
+          <div class="price-row"><span class="price-name">Permanent kort hår</span><span class="price-amount">Fra 1.410 kr.</span></div>
+          <div class="price-row"><span class="price-name">Permanent melllemlængde</span><span class="price-amount">Fra 1.470 kr.</span></div>
+          <div class="price-row"><span class="price-name">Permanent langt hår</span><span class="price-amount">Fra 1.620 kr.</span></div>
+        </div>
+
+        <div class="price-category">
+          <div class="price-category-heading">Kur</div>
+          <div class="price-row"><span class="price-name">Kur inkl. hovedbundsmassage</span><span class="price-amount">Fra 395 kr.</span></div>
+        </div>
+
+        <div class="price-category">
+          <div class="price-category-heading">Bryn & Vipper</div>
+          <div class="price-row"><span class="price-name">Farve bryn inkl. retning</span><span class="price-amount">170 kr.</span></div>
+          <div class="price-row"><span class="price-name">Farve vipper</span><span class="price-amount">170 kr.</span></div>
+          <div class="price-row"><span class="price-name">Farve bryn & vipper inkl. retning</span><span class="price-amount">315 kr.</span></div>
+          <div class="price-row"><span class="price-name">Retning af bryn</span><span class="price-amount">85 kr.</span></div>
+          <div class="price-row"><span class="price-name">Voks hage</span><span class="price-amount">85 kr.</span></div>
+          <div class="price-row"><span class="price-name">Voks overlæbe</span><span class="price-amount">85 kr.</span></div>
+        </div>
+
+        <div class="price-category">
+          <div class="price-category-heading">Opsætning</div>
+          <div class="price-row"><span class="price-name">Vask inkl. lille føn</span><span class="price-amount">275 kr.</span></div>
+          <div class="price-row"><span class="price-name">Vask inkl. stor føn</span><span class="price-amount">345 kr.</span></div>
+        </div>
+
+        <div class="price-category">
+          <div class="price-category-heading">To Go</div>
+          <div class="price-row"><span class="price-name">Bundfarve to-go</span><span class="price-amount">415 kr.</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- HERRE -->
+    <div class="price-panel" id="panel-herre">
+
+      <div>
+        <div class="price-category">
+          <div class="price-category-heading">Klip</div>
+          <div class="price-row"><span class="price-name">Herreklip, vask og føn</span><span class="price-amount">395 kr.</span></div>
+          <div class="price-row"><span class="price-name">Herreklip uden vask & føn</span><span class="price-amount">325 kr.</span></div>
+          <div class="price-row"><span class="price-name">Skæg</span><span class="price-amount">Fra 95 kr.</span></div>
+          <div class="price-row"><span class="price-name">Børneklip 0–3 år</span><span class="price-amount">285 kr.</span></div>
+          <div class="price-row"><span class="price-name">Børneklip 4–12 år</span><span class="price-amount">325 kr.</span></div>
+        </div>
+
+        <div class="price-category">
+          <div class="price-category-heading">Farve & Reflekser – med klip</div>
+          <div class="price-row"><span class="price-name">Helfarve / reflekser</span><span class="price-amount">715 kr.</span></div>
+          <div class="price-row"><span class="price-name">Kamstrejf</span><span class="price-amount">605 kr.</span></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="price-category">
+          <div class="price-category-heading">Farve & Reflekser – uden klip</div>
+          <div class="price-row"><span class="price-name">Helfarve / reflekser</span><span class="price-amount">Fra 525 kr.</span></div>
+          <div class="price-row"><span class="price-name">Reflekser langt hår</span><span class="price-amount">1.225 kr.</span></div>
+        </div>
+
+        <div class="price-category">
+          <div class="price-category-heading">Permanent – med klip</div>
+          <div class="price-row"><span class="price-name">Permanent kort hår</span><span class="price-amount">Fra 1.410 kr.</span></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="price-cta">
+    <div>
+      <h2>Klar til at booke?</h2>
+      <p>Book din tid online – vi starter altid med at lytte.</p>
+    </div>
+    <a href="https://salonbook.one/?elite.studio#/" target="_blank" class="btn btn-primary">Book nu</a>
+  </div>
+
+  <footer>
+    <div>
+      <div class="footer-brand">Elite Studio ApS</div>
+      <div class="footer-tagline">Hårstudie · Vejen, Danmark</div>
+    </div>
+    <div>
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Forside</a></li>
+        <li><a href="gallery.html">Galleri</a></li>
+        <li><a href="about.html">Om os</a></li>
+        <li><a href="pris.html">Priser</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Studio</h4>
+      <ul>
+        <li><a href="#">Nørregade 12I, Vejen</a></li>
+        <li><a href="tel:22331625">22331625</a></li>
+        <li><a href="mailto:Elitestudiovejen@gmail.com">Elitestudiovejen@gmail.com</a></li>
+        <li style="margin-top:16px"><a href="https://salonbook.one/?elite.studio#/" target="_blank" style="color:var(--accent)">Book online →</a></li>
+        <li style="margin-top:10px"><a href="https://www.instagram.com/elite_studio_vejen" target="_blank" style="color:var(--accent)">Instagram →</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">© 2026 Elite Studio ApS. Alle rettigheder forbeholdes.</div>
+  </footer>
+
+  <script>
+    function switchTab(tab, btn) {
+      document.querySelectorAll('.price-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('panel-' + tab).classList.add('active');
+      btn.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>

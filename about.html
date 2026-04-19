@@ -65,6 +65,51 @@
       .values-grid { grid-template-columns: 1fr; }
       .story-stat { flex-direction: column; gap: 28px; }
     }
+
+    .louise-photo {
+      position: relative;
+      overflow: hidden;
+    }
+    .louise-photo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('assests/DSCF0254.JPG') center 50% / cover no-repeat;
+    }
+
+    .story-facade-img { width: 65%; margin-top: 32px; object-fit: cover; }
+
+    .team-card-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-dark);
+      border-bottom: 1px solid var(--border);
+    }
+    .placeholder-initials {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: var(--accent-dark);
+      letter-spacing: 0.08em;
+      opacity: 0.6;
+    }
+
+    .bio-expand p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.8; margin-top: 12px; }
+    .read-more-btn {
+      background: none;
+      border: none;
+      padding: 0;
+      margin-top: 14px;
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-dark);
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .read-more-btn:hover { color: var(--text); }
   </style>
 </head>
 <body>
@@ -78,7 +123,7 @@
       <li><a href="index.html">Forside</a></li>
       <li><a href="gallery.html">Galleri</a></li>
       <li><a href="about.html" class="active">Om os</a></li>
-      <li><a href="contact.html">Kontakt</a></li>
+      <li><a href="pris.html">Priser</a></li>
       <li><a href="https://salonbook.one/?elite.studio#/" target="_blank" class="btn-book">Book nu</a></li>
     </ul>
   </nav>
@@ -86,8 +131,8 @@
   <div class="about-hero">
     <div class="about-hero-text">
       <span class="section-label">Vores historie</span>
-      <h1>Mennesker<br>der elsker faget.</h1>
-      <p>Vi er et hold af selvstændige frisører med én ting til fælles: vi tager vores arbejde alvorligt. Ikke på en stiv måde – men fordi vi synes, det betyder noget at gøre det ordentligt.</p>
+      <h1>Elite studio er et <br>sted for dig,<br>der forventer mere.</h1>
+      <p>Salonen består af selvstændige frisører, der lejer stol og driver deres egen forretning – men som deler den samme passion for frisørfaget. Det skaber et stærkt fagligt miljø, hvor vi inspirerer hinanden og konstant udvikler os.</p>
     </div>
     <div class="about-hero-image">
       <img src="assests/DSCF0130.png" alt="Indeni studiet" />
@@ -96,27 +141,16 @@
 
   <section class="story">
     <div>
-      <span class="section-label">Grundlagt 2018</span>
-      <p class="story-lead">Vi startede småt i 2018 med et enkelt ønske: at lave godt frisørarbejde i rolige omgivelser – uden stress og uden kompromis.</p>
-      <div class="story-stat">
-        <div>
-          <div class="stat-number">8+</div>
-          <div class="stat-label">År i branchen</div>
-        </div>
-        <div>
-          <div class="stat-number">2k</div>
-          <div class="stat-label">Klienter betjent</div>
-        </div>
-        <div>
-          <div class="stat-number">3</div>
-          <div class="stat-label">Frisører i teamet</div>
-        </div>
-      </div>
+      <span class="section-label">Grundlagt 2026</span>
+  
+      <p class="story-lead">elite studio er et sted for dig, der forventer mere.</p>
+      <img src="assests/DSCF01.png" alt="Elite Studio facade" class="story-facade-img" />
     </div>
     <div class="story-body">
-      <p>Elite Studio åbnede i efteråret 2018 på Nørregade i Vejen. Det begyndte som én stol og er vokset til et studie med tre frisører – men tilgangen er den samme som fra dag ét.</p>
-      <p>Vi er selvstændige, men vi arbejder tæt sammen. Deler viden, sparrer med hinanden og holder hinanden skarpe. Det gør os bedre – og det mærker vores kunder.</p>
-      <p>Vi er ikke den hurtigste salon. Vi er heller ikke den billigste. Men vi er dem, der tager os tid til at gøre det rigtigt.</p>
+      <p>Hos Elite Studio handler det om mere end hår – det handler om håndværk.
+Vi samler dygtige, selvstændige frisører under ét fælles fundament: kvalitet, faglighed og ro. Hver frisør arbejder med sin egen stil og ekspertise, men med samme fokus på præcision, fordybelse og skræddersyede løsninger.</p>
+      <p>Uanset hvem du vælger, er målet det samme: et resultat, der passer til dig, dit hår og din hverdag. Med passion for avancerede farvebehandlinger, høj faglighed og plads til detaljen skaber vi en oplevelse, hvor individualitet og fællesskab går hånd i hånd.</p>
+      <p>Hvis du vil, kan jeg også lave 2-3 kortere versioner i lidt forskellige stilarter, fx mere luksuriøs, mere moderne eller mere eksklusiv.</p>
     </div>
   </section>
 
@@ -127,33 +161,49 @@
     </div>
     <div class="team-grid">
       <div class="team-card">
-        <div class="team-card-img">
-          <img src="assests/DSCF0284.JPG" alt="Sofia Berg" />
+        <div class="team-card-img louise-photo">
         </div>
         <div class="team-card-info">
-          <h3>Sofia Berg</h3>
-          <div class="team-role">Grundlægger & Chefstylist</div>
-          <p>15 års erfaring inden for faget. Uddannet i London og Paris, men har valgt at slå sig ned i Vejen. Hendes speciale er farve – med øje for det naturlige og det holdbare.</p>
+          <h3>Louise Háskor</h3>
+          <div class="team-role">Salonindehaver, Master Colorist & underviser</div>
+          <p>Som ejer af Elite Studio står jeg bag visionen om en salon, hvor kvalitet, faglighed og ro er fundamentet for alt, vi laver.</p>
+          <div class="bio-expand" id="louise-bio" style="display:none;">
+            <p>Jeg er født og opvokset i Vejen og uddannet frisør i byen i 2020. Siden da har jeg specialiseret mig i avancerede farvebehandlinger, hvor præcision, teknik og forståelse for hår spiller en afgørende rolle. Jeg er certificeret Bleach Colorist og arbejder med stor passion for at skabe skræddersyede farveresultater, der fremhæver både hår og personlighed.</p>
+            <p>Ud over mit arbejde i salonen er jeg ejer af Bleach Academy, hvor jeg underviser frisører i moderne farveteknikker og deler min viden med branchen. Undervisningen er en stor del af min faglige udvikling og holder mig konstant opdateret og inspireret.</p>
+            <p>I Elite Studio har jeg skabt et professionelt miljø, hvor dygtige selvstændige frisører arbejder side om side med samme respekt for håndværket og for oplevelsen i stolen.</p>
+            <p>Når du sætter dig hos mig, er mit fokus altid det samme – at fordybe mig i mit arbejde og skabe et resultat, der er nøje tilpasset dig, dit hår og din hverdag.</p>
+          </div>
+          <button class="read-more-btn" onclick="toggleBio()" id="louise-btn">Læs mere</button>
         </div>
       </div>
       <div class="team-card">
-        <div class="team-card-img">
-          <img src="assests/DSCF0274.JPG" alt="Emil Dahl" />
+        <div class="team-card-img team-card-placeholder">
+          <div class="placeholder-initials">DF</div>
         </div>
         <div class="team-card-info">
-          <h3>Emil Dahl</h3>
+          <h3>Didde Fabrin</h3>
           <div class="team-role">Senior Stylist</div>
-          <p>Emil er den type frisør der tager sig tid til konsultationen. Hans styrke er det præcise klip – til alle køn – og han er altid ærlig om, hvad der virker.</p>
+          <p>Jeg er uddannet frisør i 2002 fra Holk Intercoiffure i Kolding. Siden da har jeg opbygget solid erfaring i faget, blandt andet som selvstændig, hvor jeg har drevet egen salon i Vejen i cirka 8 år.</p>
+          <div class="bio-expand" id="didde-bio" style="display:none;">
+            <p>I dag er jeg selvstændig frisør hos Elite Studio i Vejen, hvor jeg fortsat arbejder med stor passion for frisørfaget og lægger vægt på kvalitet, service og personlig rådgivning.</p>
+            <p>Privat er jeg bosat i Ribe sammen med min mand og vores to børn.</p>
+          </div>
+          <button class="read-more-btn" onclick="toggleDiddeBio()" id="didde-btn">Læs mere</button>
         </div>
       </div>
       <div class="team-card">
-        <div class="team-card-img">
-          <img src="assests/DSCF0294.JPG" alt="Mia Larsen" />
+        <div class="team-card-img team-card-placeholder">
+          <div class="placeholder-initials">AB</div>
         </div>
         <div class="team-card-info">
-          <h3>Mia Larsen</h3>
-          <div class="team-role">Farvespecialist</div>
-          <p>Mia arbejder primært med farve og har en særlig sans for det der ser naturligt ud – ikke malet, men solkysset. Mange af hendes kunder kommer igen og igen.</p>
+          <h3>Astrid Boier</h3>
+          <div class="team-role">Stylist</div>
+          <p>Jeg er 22 år og født og opvokset i Brørup, og er nu bosat i Haderslev. Jeg er uddannet i 2024 fra Hansenberg i Kolding og har haft min læretid hos Frisørgalleriet i Gram.</p>
+          <div class="bio-expand" id="astrid-bio" style="display:none;">
+            <p>Den 1. juni 2025 startede jeg i salonen som ansat, og 1. september 2025 som selvstændig.</p>
+            <p>Jeg elsker at arbejde kreativt med hår – især farver og klip, hvor jeg kan skabe fede, personlige looks, der passer til dig og din stil.</p>
+          </div>
+          <button class="read-more-btn" onclick="toggleAstridBio()" id="astrid-btn">Læs mere</button>
         </div>
       </div>
     </div>
@@ -199,7 +249,7 @@
         <li><a href="index.html">Forside</a></li>
         <li><a href="gallery.html">Galleri</a></li>
         <li><a href="about.html">Om os</a></li>
-        <li><a href="contact.html">Kontakt</a></li>
+        <li><a href="pris.html">Priser</a></li>
       </ul>
     </div>
     <div>
@@ -209,10 +259,34 @@
         <li><a href="tel:22331625">22331625</a></li>
         <li><a href="mailto:Elitestudiovejen@gmail.com">Elitestudiovejen@gmail.com</a></li>
         <li style="margin-top:16px"><a href="https://salonbook.one/?elite.studio#/" target="_blank" style="color:var(--accent)">Book online →</a></li>
+        <li style="margin-top:10px"><a href="https://www.instagram.com/elite_studio_vejen" target="_blank" style="color:var(--accent)">Instagram →</a></li>
       </ul>
     </div>
     <div class="footer-bottom">© 2026 Elite Studio ApS. Alle rettigheder forbeholdes.</div>
   </footer>
 
+  <script>
+    function toggleBio() {
+      const bio = document.getElementById('louise-bio');
+      const btn = document.getElementById('louise-btn');
+      const expanded = bio.style.display === 'block';
+      bio.style.display = expanded ? 'none' : 'block';
+      btn.textContent = expanded ? 'Læs mere' : 'Læs mindre';
+    }
+    function toggleDiddeBio() {
+      const bio = document.getElementById('didde-bio');
+      const btn = document.getElementById('didde-btn');
+      const expanded = bio.style.display === 'block';
+      bio.style.display = expanded ? 'none' : 'block';
+      btn.textContent = expanded ? 'Læs mere' : 'Læs mindre';
+    }
+    function toggleAstridBio() {
+      const bio = document.getElementById('astrid-bio');
+      const btn = document.getElementById('astrid-btn');
+      const expanded = bio.style.display === 'block';
+      bio.style.display = expanded ? 'none' : 'block';
+      btn.textContent = expanded ? 'Læs mere' : 'Læs mindre';
+    }
+  </script>
 </body>
 </html>
