@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact — Maison Strandvær</title>
+  <title>Kontakt — Elite Studio ApS</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -100,97 +100,97 @@
 <body>
 
   <nav>
-    <a class="nav-logo" href="index.html">Maison Strandvær</a>
+    <a class="nav-logo" href="index.html">Elite Studio ApS</a>
     <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
-      <li><a href="https://booking.example.com" target="_blank" class="btn-book">Book Now</a></li>
+      <li><a href="index.html">Forside</a></li>
+      <li><a href="gallery.html">Galleri</a></li>
+      <li><a href="about.html">Om os</a></li>
+      <li><a href="contact.html" class="active">Kontakt</a></li>
+      <li><a href="https://salonbook.one/?elite.studio#/" target="_blank" class="btn-book">Book nu</a></li>
     </ul>
   </nav>
 
   <div class="contact-wrap">
     <div class="contact-info">
-      <span class="section-label">Get In Touch</span>
-      <h1>Let's talk<br><em style="color:var(--accent-dark)">hair.</em></h1>
-      <p class="intro">Have a question about our services, pricing, or just want to get a sense of what to expect? We'd love to hear from you.</p>
+      <span class="section-label">Kom i kontakt</span>
+      <h1>Lad os tale<br><em style="color:var(--accent-dark)">hår.</em></h1>
+      <p class="intro">Spørgsmål om priser, behandlinger eller bare nysgerrig på hvad vi kan? Skriv til os – vi svarer hurtigt og uden floskler.</p>
       <div class="contact-details">
         <div>
-          <div class="detail-label">Address</div>
-          <div class="detail-value">Strandveien 14<br>0252 Oslo, Norway</div>
+          <div class="detail-label">Adresse</div>
+          <div class="detail-value">Nørregade 12I<br>6600 Vejen, Danmark</div>
         </div>
         <div>
-          <div class="detail-label">Phone</div>
-          <div class="detail-value"><a href="tel:+4712345678">+47 123 45 678</a></div>
+          <div class="detail-label">Telefon</div>
+          <div class="detail-value"><a href="tel:22331625">22331625</a></div>
         </div>
         <div>
-          <div class="detail-label">Email</div>
-          <div class="detail-value"><a href="mailto:hello@maisonstrandvaer.no">hello@maisonstrandvaer.no</a></div>
+          <div class="detail-label">E-mail</div>
+          <div class="detail-value"><a href="mailto:Elitestudiovejen@gmail.com">Elitestudiovejen@gmail.com</a></div>
         </div>
         <div>
-          <div class="detail-label">Bookings</div>
-          <div class="detail-value"><a href="https://booking.example.com" target="_blank" style="color:var(--accent-dark)">Book Online →</a></div>
+          <div class="detail-label">Booking</div>
+          <div class="detail-value"><a href="https://salonbook.one/?elite.studio#/" target="_blank" style="color:var(--accent-dark)">Book online →</a></div>
         </div>
       </div>
       <div class="hours-table">
-        <h3>Opening Hours</h3>
-        <div class="hours-row"><span class="hours-day">Monday – Tuesday</span><span class="closed">Closed</span></div>
-        <div class="hours-row"><span class="hours-day">Wednesday – Friday</span><span>10:00 – 19:00</span></div>
-        <div class="hours-row"><span class="hours-day">Saturday</span><span>09:00 – 17:00</span></div>
-        <div class="hours-row"><span class="hours-day">Sunday</span><span class="closed">Closed</span></div>
+        <h3>Åbningstider</h3>
+        <div class="hours-row"><span class="hours-day">Mandag – Tirsdag</span><span class="closed">Lukket</span></div>
+        <div class="hours-row"><span class="hours-day">Onsdag – Fredag</span><span>10:00 – 19:00</span></div>
+        <div class="hours-row"><span class="hours-day">Lørdag</span><span>09:00 – 17:00</span></div>
+        <div class="hours-row"><span class="hours-day">Søndag</span><span class="closed">Lukket</span></div>
       </div>
     </div>
 
     <div class="contact-form-wrap">
-      <h2>Send us a message</h2>
-      <p class="sub">We'll reply within one business day.</p>
+      <h2>Skriv til os</h2>
+      <p class="sub">Vi vender tilbage inden for én arbejdsdag.</p>
       <form id="contactForm" onsubmit="handleSubmit(event)">
         <div class="form-row">
           <div class="form-group">
-            <label for="firstName">First Name</label>
+            <label for="firstName">Fornavn</label>
             <input type="text" id="firstName" name="firstName" placeholder="Anna" required />
           </div>
           <div class="form-group">
-            <label for="lastName">Last Name</label>
+            <label for="lastName">Efternavn</label>
             <input type="text" id="lastName" name="lastName" placeholder="Hansen" required />
           </div>
         </div>
         <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" placeholder="anna@example.com" required />
+          <label for="email">E-mailadresse</label>
+          <input type="email" id="email" name="email" placeholder="anna@eksempel.dk" required />
         </div>
         <div class="form-group">
-          <label for="phone">Phone (optional)</label>
-          <input type="tel" id="phone" name="phone" placeholder="+47 000 00 000" />
+          <label for="phone">Telefon (valgfrit)</label>
+          <input type="tel" id="phone" name="phone" placeholder="+45 00 00 00 00" />
         </div>
         <div class="form-group">
-          <label for="service">Service of Interest</label>
+          <label for="service">Ønsket behandling</label>
           <select id="service" name="service">
-            <option value="">Select a service…</option>
-            <option>Haircut & Styling</option>
-            <option>Colour & Balayage</option>
-            <option>Keratin Treatment</option>
-            <option>Bridal Styling</option>
+            <option value="">Vælg en behandling…</option>
+            <option>Klip & Styling</option>
+            <option>Farve & Balayage</option>
+            <option>Keratinbehandling</option>
+            <option>Brudestyling</option>
             <option>Extensions</option>
-            <option>Other / Not sure yet</option>
+            <option>Andet / Ved det ikke endnu</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Tell us a bit about what you're looking for…"></textarea>
+          <label for="message">Besked</label>
+          <textarea id="message" name="message" placeholder="Fortæl os lidt om, hvad du søger…"></textarea>
         </div>
         <div class="form-submit">
-          <span class="form-note">Or <a href="https://booking.example.com" target="_blank" style="color:var(--accent-dark)">book directly online →</a></span>
-          <button type="submit" class="btn btn-primary">Send Message</button>
+          <span class="form-note">Eller <a href="https://salonbook.one/?elite.studio#/" target="_blank" style="color:var(--accent-dark)">book direkte online →</a></span>
+          <button type="submit" class="btn btn-primary">Send besked</button>
         </div>
       </form>
       <div class="form-success" id="formSuccess">
-        <h3>Message sent.</h3>
-        <p>Thanks for reaching out — we'll be in touch soon.</p>
+        <h3>Tak for beskeden.</h3>
+        <p>Vi har modtaget din besked og vender tilbage så hurtigt vi kan.</p>
       </div>
     </div>
   </div>
@@ -198,36 +198,36 @@
   <div class="map-section">
     <div class="map-placeholder">
       <div class="map-pin">
-        <strong>Maison Strandvær</strong>
-        <span>Strandveien 14, Oslo</span>
+        <strong>Elite Studio ApS</strong>
+        <span>Nørregade 12I, Vejen</span>
       </div>
     </div>
   </div>
 
   <footer>
     <div>
-      <div class="footer-brand">Maison Strandvær</div>
-      <div class="footer-tagline">Hair studio · Oslo, Norway</div>
+      <div class="footer-brand">Elite Studio ApS</div>
+      <div class="footer-tagline">Hårstu die · Vejen, Danmark</div>
     </div>
     <div>
-      <h4>Navigate</h4>
+      <h4>Navigation</h4>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html">Forside</a></li>
+        <li><a href="gallery.html">Galleri</a></li>
+        <li><a href="about.html">Om os</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
       </ul>
     </div>
     <div>
       <h4>Studio</h4>
       <ul>
-        <li><a href="#">Strandveien 14, Oslo</a></li>
-        <li><a href="tel:+4712345678">+47 123 45 678</a></li>
-        <li><a href="mailto:hello@maisonstrandvaer.no">hello@maisonstrandvaer.no</a></li>
-        <li style="margin-top:16px"><a href="https://booking.example.com" target="_blank" style="color:var(--accent)">Book Online →</a></li>
+        <li><a href="#">Nørregade 12I, Vejen</a></li>
+        <li><a href="tel:22331625">22331625</a></li>
+        <li><a href="mailto:Elitestudiovejen@gmail.com">Elitestudiovejen@gmail.com</a></li>
+        <li style="margin-top:16px"><a href="https://salonbook.one/?elite.studio#/" target="_blank" style="color:var(--accent)">Book online →</a></li>
       </ul>
     </div>
-    <div class="footer-bottom">© 2026 Maison Strandvær. All rights reserved.</div>
+    <div class="footer-bottom">© 2026 Elite Studio ApS. Alle rettigheder forbeholdes.</div>
   </footer>
 
   <script>

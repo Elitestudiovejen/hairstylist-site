@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maison Strandvær — Hair Studio</title>
+  <title>Elite Studio ApS — Hårstudie</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -67,6 +67,29 @@
       from { transform: translateX(0); }
       to   { transform: translateX(-50%); }
     }
+
+    .philosophy {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+    .philosophy-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .philosophy-heading-col {}
+    .philosophy-heading-col .section-heading {
+      position: sticky;
+      top: calc(var(--nav-height) + 32px);
+    }
+    .philosophy-body p {
+      color: var(--text-muted);
+      line-height: 1.9;
+      font-size: 0.97rem;
+      margin-bottom: 22px;
+    }
+    .philosophy-body p:last-child { margin-bottom: 0; }
 
     .services { background: var(--bg-dark); }
     .services-header {
@@ -135,6 +158,7 @@
       .hero { grid-template-columns: 1fr; min-height: auto; }
       .hero-content { padding: 60px 24px; }
       .hero-image { height: 50vw; min-height: 280px; }
+      .philosophy-inner { grid-template-columns: 1fr; gap: 32px; }
       .services-header { flex-direction: column; align-items: flex-start; gap: 24px; }
       .services-grid { grid-template-columns: 1fr; }
       .featured { grid-template-columns: 1fr; }
@@ -147,129 +171,143 @@
 <body>
 
   <nav>
-    <a class="nav-logo" href="index.html">Maison Strandvær</a>
+    <a class="nav-logo" href="index.html">Elite Studio ApS</a>
     <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="https://booking.example.com" target="_blank" class="btn-book">Book Now</a></li>
+      <li><a href="index.html" class="active">Forside</a></li>
+      <li><a href="gallery.html">Galleri</a></li>
+      <li><a href="about.html">Om os</a></li>
+      <li><a href="contact.html">Kontakt</a></li>
+      <li><a href="https://salonbook.one/?elite.studio#/" target="_blank" class="btn-book">Book nu</a></li>
     </ul>
   </nav>
 
   <section class="hero">
     <div class="hero-content">
-      <span class="section-label">Oslo · Est. 2018</span>
-      <h1 class="hero-title">Where hair<br>becomes <em>art.</em></h1>
-      <p class="hero-subtitle">A boutique hair studio dedicated to precision cuts, lived-in colour, and the kind of finish that turns heads — quietly.</p>
+      <span class="section-label">Vejen · Est. 2018</span>
+      <h1 class="hero-title">Hvor hår<br>bliver til <em>kunst.</em></h1>
+      <p class="hero-subtitle">Vi klipper, farver og behandler med omhu. Hos os får du tid, nærvær og et resultat du kan mærke.</p>
       <div class="hero-cta">
-        <a href="https://booking.example.com" target="_blank" class="btn btn-primary">Book an Appointment</a>
-        <a href="gallery.html" class="btn btn-outline">View Our Work</a>
+        <a href="https://salonbook.one/?elite.studio#/" target="_blank" class="btn btn-primary">Book en tid</a>
+        <a href="gallery.html" class="btn btn-outline">Se vores arbejde</a>
       </div>
     </div>
     <div class="hero-image">
-      <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=900&auto=format&fit=crop&q=80" alt="Hairstylist at work" />
+      <img src="assests/DSCF0203.JPG" alt="Frisør i arbejde" />
       <div class="hero-image-overlay"></div>
     </div>
   </section>
 
   <div class="marquee-section" aria-hidden="true">
     <div class="marquee-track">
-      <span>Precision Cuts</span><span class="dot">·</span>
-      <span>Lived-In Colour</span><span class="dot">·</span>
+      <span>Præcisionsklip</span><span class="dot">·</span>
+      <span>Naturlige Farver</span><span class="dot">·</span>
       <span>Balayage</span><span class="dot">·</span>
-      <span>Bridal Styling</span><span class="dot">·</span>
-      <span>Keratin Treatments</span><span class="dot">·</span>
-      <span>Colour Correction</span><span class="dot">·</span>
-      <span>Scalp Care</span><span class="dot">·</span>
+      <span>Brudestyling</span><span class="dot">·</span>
+      <span>Keratinbehandling</span><span class="dot">·</span>
+      <span>Farvekorrektur</span><span class="dot">·</span>
+      <span>Hovedbundspleje</span><span class="dot">·</span>
       <span>Extensions</span><span class="dot">·</span>
-      <span>Precision Cuts</span><span class="dot">·</span>
-      <span>Lived-In Colour</span><span class="dot">·</span>
+      <span>Præcisionsklip</span><span class="dot">·</span>
+      <span>Naturlige Farver</span><span class="dot">·</span>
       <span>Balayage</span><span class="dot">·</span>
-      <span>Bridal Styling</span><span class="dot">·</span>
-      <span>Keratin Treatments</span><span class="dot">·</span>
-      <span>Colour Correction</span><span class="dot">·</span>
-      <span>Scalp Care</span><span class="dot">·</span>
+      <span>Brudestyling</span><span class="dot">·</span>
+      <span>Keratinbehandling</span><span class="dot">·</span>
+      <span>Farvekorrektur</span><span class="dot">·</span>
+      <span>Hovedbundspleje</span><span class="dot">·</span>
       <span>Extensions</span><span class="dot">·</span>
     </div>
   </div>
 
+  <section class="philosophy">
+    <div class="philosophy-inner">
+      <div class="philosophy-heading-col">
+        <span class="section-label">Vores tilgang</span>
+        <h2 class="section-heading">Kvalitet,<br>faglighed<br>og ro.</h2>
+      </div>
+      <div class="philosophy-body">
+        <p>Vores salon er et fællesskab af selvstændige frisører med en fælles ambition: at levere kvalitet i hver eneste behandling.</p>
+        <p>Vi tror på, at godt håndværk kræver både tid, erfaring og konstant udvikling. Derfor arbejder vi hele tiden på at forfine vores teknikker og holde os opdateret inden for faget.</p>
+        <p>Samtidig har vi skabt en salon, hvor atmosfæren er rolig og behagelig – et sted hvor du kan læne dig tilbage, sænke skuldrene og nyde en pause, mens vi tager os af detaljerne.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="services">
     <div class="services-header">
       <div>
-        <span class="section-label">What We Offer</span>
-        <h2 class="section-heading">Services crafted<br>for every look.</h2>
+        <span class="section-label">Hvad vi tilbyder</span>
+        <h2 class="section-heading">Vi finder det<br>der passer til dig.</h2>
       </div>
-      <a href="https://booking.example.com" target="_blank" class="btn btn-primary">See All Services</a>
+      <a href="https://salonbook.one/?elite.studio#/" target="_blank" class="btn btn-primary">Se alle behandlinger</a>
     </div>
     <div class="services-grid">
       <div class="service-card">
         <div class="service-icon"></div>
-        <h3>Cuts & Styling</h3>
-        <p>From structured bobs to effortless layers — every cut is tailored to your face shape, lifestyle, and texture.</p>
-        <span class="service-price">From 650 kr</span>
+        <h3>Klip & Styling</h3>
+        <p>Uanset om du vil have noget klassisk eller prøve noget nyt, starter vi altid med at lytte. Så finder vi det klip der sidder rigtigt – ikke bare lige nu, men også om tre uger.</p>
+        <span class="service-price">Fra 650 kr</span>
       </div>
       <div class="service-card">
         <div class="service-icon"></div>
-        <h3>Colour & Balayage</h3>
-        <p>Dimensional colour, sun-kissed balayage, and full transformations done with precision and intention.</p>
-        <span class="service-price">From 1 200 kr</span>
+        <h3>Farve & Balayage</h3>
+        <p>Balayage, highlights eller en fuld farveændring – vi arbejder med det der klæder netop dit hår og din hudfarve. Ingen standardløsninger.</p>
+        <span class="service-price">Fra 1.200 kr</span>
       </div>
       <div class="service-card">
         <div class="service-icon"></div>
-        <h3>Treatments</h3>
-        <p>Restorative keratin, deep conditioning, and scalp treatments to bring health and shine back to your hair.</p>
-        <span class="service-price">From 490 kr</span>
+        <h3>Behandlinger</h3>
+        <p>Når håret trænger til lidt ekstra omsorg. Vi tilbyder keratin, dyb konditionering og behandlinger til hovedbunden – godt håndværk begynder nedefra.</p>
+        <span class="service-price">Fra 490 kr</span>
       </div>
     </div>
   </section>
 
   <div class="featured">
     <div class="featured-images">
-      <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&auto=format&fit=crop&q=80" alt="Featured work 1" />
-      <img src="https://images.unsplash.com/photo-1519735777090-ec97162dc266?w=400&auto=format&fit=crop&q=80" alt="Featured work 2" />
-      <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=400&auto=format&fit=crop&q=80" alt="Featured work 3" />
+      <img src="assests/DSCF0228.JPG" alt="Fremhævet arbejde 1" />
+      <img src="assests/DSCF0130.JPG" alt="Fremhævet arbejde 2" />
+      <img src="assests/DSCF0246.JPG" alt="Fremhævet arbejde 3" />
     </div>
     <div class="featured-text">
-      <span class="section-label">Our Work</span>
-      <h2 class="section-heading">Every strand tells a story.</h2>
-      <p>We believe great hair isn't about trends — it's about finding what makes you feel most yourself. Browse our gallery to see the full range of what's possible.</p>
-      <a href="gallery.html" class="btn btn-outline">Explore Gallery</a>
+      <span class="section-label">Vores arbejde</span>
+      <h2 class="section-heading">Se hvad der er muligt.</h2>
+      <p>Godt hår handler ikke om en bestemt trend – det handler om det der passer til dig. Tag et kig i galleriet og få en fornemmelse af, hvad vi laver.</p>
+      <a href="gallery.html" class="btn btn-outline">Gå til galleriet</a>
     </div>
   </div>
 
   <div class="testimonial">
-    <blockquote>"I've never felt more confident walking out of a salon. The team at Maison Strandvær genuinely listens — and the results speak for themselves."</blockquote>
-    <cite>— Ingrid M., loyal client since 2020</cite>
+    <blockquote>„Jeg har gået hos Elite Studio i tre år nu, og jeg ville ikke bytte. De lytter, de er ærlige – og jeg går altid hjem med noget jeg faktisk elsker."</blockquote>
+    <cite>— Ingrid M., fast kunde siden 2020</cite>
   </div>
 
   <footer>
     <div>
-      <div class="footer-brand">Maison Strandvær</div>
-      <div class="footer-tagline">Hair studio · Oslo, Norway</div>
+      <div class="footer-brand">Elite Studio ApS</div>
+      <div class="footer-tagline">Hårstu die · Vejen, Danmark</div>
     </div>
     <div>
-      <h4>Navigate</h4>
+      <h4>Navigation</h4>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html">Forside</a></li>
+        <li><a href="gallery.html">Galleri</a></li>
+        <li><a href="about.html">Om os</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
       </ul>
     </div>
     <div>
       <h4>Studio</h4>
       <ul>
-        <li><a href="#">Strandveien 14, Oslo</a></li>
-        <li><a href="tel:+4712345678">+47 123 45 678</a></li>
-        <li><a href="mailto:hello@maisonstrandvaer.no">hello@maisonstrandvaer.no</a></li>
-        <li style="margin-top:16px"><a href="https://booking.example.com" target="_blank" style="color:var(--accent)">Book Online →</a></li>
+        <li><a href="#">Nørregade 12I, Vejen</a></li>
+        <li><a href="tel:22331625">22331625</a></li>
+        <li><a href="mailto:Elitestudiovejen@gmail.com">Elitestudiovejen@gmail.com</a></li>
+        <li style="margin-top:16px"><a href="https://salonbook.one/?elite.studio#/" target="_blank" style="color:var(--accent)">Book online →</a></li>
       </ul>
     </div>
-    <div class="footer-bottom">© 2026 Maison Strandvær. All rights reserved.</div>
+    <div class="footer-bottom">© 2026 Elite Studio ApS. Alle rettigheder forbeholdes.</div>
   </footer>
 
 </body>
